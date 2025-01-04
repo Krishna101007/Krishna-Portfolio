@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gaming Page</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* General Styling */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        background-color: #f4f4f4; /* Neutral background */
+        color: #333;
+      }
+
+      /* Professional Back Button Styling */
+      .back-btn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        background: #fff;
+        padding: 10px 15px;
+        border-radius: 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+      }
+
+      .back-btn:hover {
+        color: #fff;
+        background: #3498db;
+        box-shadow: 0 6px 12px rgba(52, 152, 219, 0.4);
+        transform: translateX(-5px); /* Slight upward movement */
+      }
+
+      .back-btn:focus {
+        outline: none; /* Remove outline when clicked */
+      }
+
+      .back-btn:active {
+        transform: translateY(2px); /* Simulate button press */
+      }
+
+      header {
+        background-image: url("man.jpg"); /* Replace with your gaming banner image */
+        background-size: cover;
+        background-position: center;
+        height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+      }
+
+      header h1 {
+        font-size: 3.5em;
+        text-shadow: 0 0 20px #000;
+      }
+
+      header p {
+        font-size: 1.2em;
+        margin-top: 10px;
+        text-shadow: 0 0 10px #000;
+      }
+
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 40px 20px;
+      }
+
+      .game-card {
+        width: 30%;
+        background-color: #1a1a1a;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease-in-out;
+        position: relative;
+        color: #fff;
+      }
+
+      .game-card:hover {
+        transform: scale(1.05);
+      }
+
+      .game-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-bottom: 3px solid #f7ca18;
+      }
+
+      .game-card .content {
+        padding: 15px;
+        text-align: left;
+      }
+
+      .game-card h3 {
+        color: #f7ca18;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+
+      .game-card p {
+        font-size: 1em;
+        line-height: 1.5;
+        color: #ccc;
+      }
+
+      /* Show More Button */
+      .hidden {
+        display: none;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin: 20px auto;
+        display: block;
+        background-color: #f7ca18;
+        color: #1a1a1a;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        text-transform: uppercase;
+        transition: background-color 0.3s ease, transform 0.2s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      button:hover {
+        background-color: #f39c12;
+        transform: scale(1.05);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .game-card {
+          width: 45%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .game-card {
+          width: 100%;
+        }
+
+        header h1 {
+          font-size: 2.5em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Professional Back Button -->
+    <a href="index.html" class="back-btn">← Back</a>
+
+    <header>
+      <div>
+        <h1>Welcome to the Gaming World</h1>
+        <p>
+          Explore our curated selection of thrilling games. Immerse yourself in
+          epic adventures, stunning visuals, and unforgettable stories.
+        </p>
+      </div>
+    </header>
+
+    <section class="gallery">
+      <!-- Game 1 -->
+      <div class="game-card">
+        <img src="adv4.png" alt="Game 1" />
+        <div class="content">
+          <h3>2D Adventure Game</h3>
+          <p>
+            Players usually control a character moving through various
+            environments, interacting with objects, solving puzzles, and talking
+            to non-playable characters to progress through the story. 2D sprites
+            are used to represent characters and objects, giving a classic
+            pixelated aesthetic.
+          </p>
+        </div>
+      </div>
+
+      <!-- Game 2 -->
+      <div class="game-card">
+        <img src="tic.avif" alt="Game 2" />
+        <div class="content">
+          <h3>Tic-Tac-Toe Game</h3>
+          <p>
+            The game is played on a grid that's 3 squares by 3 squares. You are
+            X , your friend (or the computer in this case) is O . Players take
+            turns putting their marks in empty squares. The first player to get
+            3 of her marks in a row (up, down, across, or diagonally) is the
+            winner.
+          </p>
+        </div>
+      </div>
+
+      <!-- Game 3 -->
+      <div class="game-card">
+        <img src="hung.png" alt="Game 3" />
+        <div class="content">
+          <h3>Hangman Game</h3>
+          <p>
+            Hangman is a guessing game for two or more players. One player
+            thinks of a word, phrase, or sentence and the other(s) tries to
+            guess it by suggesting letters or numbers within a certain number of
+            guesses. Originally a paper-and-pencil game, there are now
+            electronic versions.
+          </p>
+        </div>
+      </div>
+
+      <!-- Game 4 (Hidden) -->
+      <div class="game-card hidden">
+        <img src="memory.jfif" alt="Game 4" />
+        <div class="content">
+          <h3>Memory Game</h3>
+          <p>
+            The memory game is a common children's game played with a set of
+            cards. The cards have a picture on one side and each picture appears
+            on two (or sometimes four) cards. The game starts with all the cards
+            face down and players take turns to turn over two cards.
+          </p>
+        </div>
+      </div>
+
+      <!-- Game 5 (Hidden) -->
+      <div class="game-card hidden">
+        <img src="snack.jpeg" alt="Game 5" />
+        <div class="content">
+          <h3>Snack Game</h3>
+          <p>
+            A video game genre where the player controls a snake that eats
+            apples or other objects to complete levels. The snake grows longer
+            as it eats, and the game becomes more difficult as the player
+            progresses. Some examples of snake games include.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Show More Button -->
+    <button id="toggleBtn">Show More</button>
+
+    <script>
+      const toggleBtn = document.getElementById("toggleBtn");
+      const hiddenCards = document.querySelectorAll(".game-card.hidden");
+
+      toggleBtn.addEventListener("click", () => {
+        hiddenCards.forEach((card) => {
+          card.classList.toggle("hidden");
+        });
+
+        // Toggle button text
+        toggleBtn.textContent =
+          toggleBtn.textContent === "Show More" ? "Show Less" : "Show More";
+      });
+    </script>
+  </body>
+</html>

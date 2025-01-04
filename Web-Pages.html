@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Pages</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* General Styling */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        background-color: #f4f4f4; /* Neutral background */
+        color: #333;
+      }
+
+      /* Professional Back Arrow */
+      .back-arrow {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        background: #fff;
+        padding: 10px 15px;
+        border-radius: 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+      }
+
+      .back-arrow:hover {
+        color: #fff;
+        background: #3498db;
+        box-shadow: 0 6px 12px rgba(52, 152, 219, 0.4);
+        transform: translateX(-5px);
+      }
+
+      .back-arrow i {
+        font-size: 20px;
+        display: inline-block;
+        transition: all 0.3s ease;
+      }
+
+      .back-arrow:hover i {
+        transform: translateX(-5px);
+      }
+
+      header {
+        background-image: url("f.jpg"); /* Replace with your gaming banner image */
+        background-size: cover;
+        background-position: center;
+        height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+      }
+
+      header h1 {
+        font-size: 3.5em;
+        text-shadow: 0 0 20px #000;
+      }
+
+      header p {
+        font-size: 1.2em;
+        margin-top: 10px;
+        text-shadow: 0 0 10px #000;
+      }
+
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 40px 20px;
+      }
+
+      .game-card {
+        width: 30%;
+        background-color: #1a1a1a;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease-in-out;
+        position: relative;
+        color: #fff;
+      }
+
+      .game-card:hover {
+        transform: scale(1.05);
+      }
+
+      .game-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-bottom: 3px solid #f7ca18;
+      }
+
+      .game-card .content {
+        padding: 15px;
+        text-align: left;
+      }
+
+      .game-card h3 {
+        color: #f7ca18;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+
+      .game-card p {
+        font-size: 1em;
+        line-height: 1.5;
+        color: #ccc;
+      }
+
+      /* Show More Button */
+      .hidden {
+        display: none;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin: 20px auto;
+        display: block;
+        background-color: #f7ca18;
+        color: #1a1a1a;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        text-transform: uppercase;
+        transition: background-color 0.3s ease, transform 0.2s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      button:hover {
+        background-color: #f39c12;
+        transform: scale(1.05);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .game-card {
+          width: 45%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .game-card {
+          width: 100%;
+        }
+
+        header h1 {
+          font-size: 2.5em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Back Arrow -->
+    <a href="index.html" class="back-arrow"> <i>&larr;</i> Back </a>
+
+    <header>
+      <div>
+        <h1>Welcome to My Web World</h1>
+        <p>
+          Explore our curated selection of thrilling games. Immerse yourself in
+          epic adventures, stunning visuals, and unforgettable stories.
+        </p>
+      </div>
+    </header>
+
+    <section class="gallery">
+      <!-- Game 1 -->
+      <div class="game-card">
+        <img src="netflix.png" alt="Netflix Clone" />
+        <div class="content">
+          <h3>Netflix Clone</h3>
+          <p>
+            Netflix clone is an on-demand video streaming platform similar to
+            Netflix. It helps you to start your own video streaming platform
+            quickly.
+          </p>
+        </div>
+      </div>
+
+      <!-- Game 2 -->
+      <div class="game-card">
+        <img src="car.jpg" alt="Auto-Mobile Site" />
+        <div class="content">
+          <h3>Auto-Mobile Site</h3>
+          <p>
+            The automotive industry designs, develops, and manufactures
+            vehicles, providing innovation and advancements in transportation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Game 3 -->
+      <div class="game-card">
+        <img src="tourist.jpg" alt="Tourist Site" />
+        <div class="content">
+          <h3>Tourist Site</h3>
+          <p>
+            A platform to explore new destinations for leisure or sightseeing,
+            enhancing travel experiences for tourists.
+          </p>
+        </div>
+      </div>
+
+      <!-- Game 4 (Hidden) -->
+      <div class="game-card hidden">
+        <img src="google.webp" alt="Google Clone" />
+        <div class="content">
+          <h3>Google Clone</h3>
+          <p>
+            A search engine replica offering tools for image, video, and web
+            searches, and revenue opportunities via AdSense integration.
+          </p>
+        </div>
+      </div>
+
+      <!-- Game 5 (Hidden) -->
+      <div class="game-card hidden">
+        <img src="text.png" alt="Text Editor (IDE)" />
+        <div class="content">
+          <h3>Text Editor (IDE)</h3>
+          <p>
+            A versatile text editor for creating, editing, and managing code,
+            offering essential features for development workflows.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Show More Button -->
+    <button id="toggleBtn">Show More</button>
+
+    <script>
+      const toggleBtn = document.getElementById("toggleBtn");
+      const hiddenCards = document.querySelectorAll(".game-card.hidden");
+
+      toggleBtn.addEventListener("click", () => {
+        hiddenCards.forEach((card) => {
+          card.classList.toggle("hidden");
+        });
+
+        // Toggle button text
+        toggleBtn.textContent =
+          toggleBtn.textContent === "Show More" ? "Show Less" : "Show More";
+      });
+    </script>
+  </body>
+</html>
