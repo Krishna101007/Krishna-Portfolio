@@ -435,6 +435,9 @@ h3 {
   background: var(--first-color);
   color: var(--color-white);
   border-radius: 30px;
+  position: relative;
+  left: 1px;
+  top: 30px;
 }
 .about-btn button:hover {
   background: var(--first-color-hover);
@@ -450,7 +453,7 @@ h3 {
 .skills-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 30px;
 }
 .skills-list span {
   font-size: 16px;
