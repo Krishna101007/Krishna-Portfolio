@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Krishna Editor</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        
+        font-family: sans-serif;
+      }
+      body {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        background-color: #090809;
+      }
+      .leftpart {
+        flex-basis: 50%;
+        height: 97vh;
+        display: flex;
+        border-radius: 10px;
+        margin: 10px;
+        background-color:#a53939;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .content {
+        flex-basis: 33%;
+        background-color: #F44E3F;
+        color: white;
+        margin: 10px;
+        border-radius: 10px;
+      }
+
+      .rightpart {
+        flex-basis: 50%;
+        height: 97vh;
+        margin: 10px;
+        border-radius: 10px;
+        color: red;
+        background-color: #a53939;
+      }
+      .leftpart .content label {
+        display: block;
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 10px 0px;
+        font-weight: bold;
+      }
+      .leftpart .content textarea {
+        width: calc(100% - 20px);
+        height: calc(82% - 20px);
+        padding: 10px;
+        outline: none;
+        border: none;
+        background-color: black;
+        color: white;
+      }
+
+      .rightpart label {
+        display: block;
+        padding: 10px;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+      }
+      .rightpart iframe {
+        display: block;
+        width: 96%;
+        height: 90%;
+        border: none;
+        box-sizing: border-box;
+        margin: 10px;
+        z-index: 1;   
+        background-color: white;   
+      }
+    </style>
+  </head>
+  <body>
+    <div class="leftpart">
+      <div class="content">
+        <label>HTML</label>
+        <textarea></textarea>
+      </div>
+
+      <div class="content">
+        <label>CSS</label>
+        <textarea></textarea>
+      </div>
+
+      <div class="content">
+        <label>JAVASCRIPT</label>
+        <textarea></textarea>
+      </div>
+    </div>
+
+    <div class="rightpart">
+      <label>Out - Put</label>
+      <iframe id="output"></iframe>
+    </div>
+  </body>
+  
+  <script>
+    let output = document.querySelector("#output");
+    let allInput = document.querySelectorAll(".leftpart textarea");
+
+    let htmlCode,cssCode,jsCode = "";
+
+    allInput.forEach((el, index) => {
+      el.addEventListener("keyup", () => {
+        if (index == 0) {
+          htmlCode = el.value;
+        }
+        if (index == 1) {
+          cssCode = el.value;
+        }
+        if (index == 2)
+         {
+          jsCode = el.value;
+        }
+
+        output.contentDocument.body.innerHTML = htmlCode;
+        output.contentDocument.head.innerHTML = `<style>${cssCode}</style>`;
+        output.contentWindow.eval(jsCode)
+      }); 
+    });
+
+    //   output.contentDocument.body.innerHTML="<h1>Hii I'm Krishna</h1>"
+
+    //   output.contentDocument.head.innerHTML="<style> h1{color:red}</style>"
+
+    // output.contentWindow.eval('let a=10; let b=20; alert(a+b)')
+  </script>
+</html>
