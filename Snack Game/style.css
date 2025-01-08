@@ -47,9 +47,38 @@ body {
 }
 
 .controls {
-  display: none;
-  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
+
+.horizontal-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.control-btn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.control-btn.active {
+  background-color: #ff5733; /* Highlight color for hover */
+  transform: scale(1.1);    /* Slightly enlarge the button */
+  transition: 0.1s ease-in-out;
+}
+
+.control-btn:hover {
+  background-color: #444;
+}
+
+
 .controls i {
   padding: 25px 0;
   text-align: center;
