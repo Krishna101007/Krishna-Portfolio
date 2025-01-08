@@ -10,20 +10,18 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="wrapper">
-      <div class="game-details">
-        <span class="score">Score: 0</span>
-        <span class="high-score">High Score: 0</span>
-      </div>
-      <div class="play-board"></div>
-      <div class="controls">
-        <button data-key="ArrowUp" class="control-btn">↑</button>
-        <div class="horizontal-controls">
-            <button data-key="ArrowLeft" class="control-btn">←</button>
-            <button data-key="ArrowDown" class="control-btn">↓</button>
-            <button data-key="ArrowRight" class="control-btn">→</button>
-        </div>
+    <div class="score-panel">
+      <div class="score">Score: 0</div>
+      <div class="high-score">High Score: 0</div>
     </div>
+    <div class="play-board"></div>
+    <div class="controls">
+      <button class="control-btn" data-key="ArrowUp">▲</button>
+      <div class="horizontal-controls">
+        <button class="control-btn" data-key="ArrowLeft">◀</button>
+        <button class="control-btn" data-key="ArrowDown">▼</button>
+        <button class="control-btn" data-key="ArrowRight">▶</button>
+      </div>
     </div>
 
   </body>
