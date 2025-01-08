@@ -1,7 +1,17 @@
 const playBoard = document.querySelector(".play-board");
 const scoreElement = document.querySelector(".score");
 const highScoreElement = document.querySelector(".high-score");
-const controls = document.querySelectorAll(".controls i");
+const controls = document.querySelectorAll(".control-btn");
+
+// Function to add hover effect when a keyboard key is pressed
+const highlightButton = (key) => {
+    const button = document.querySelector(`.control-btn[data-key="${key}"]`);
+    if (button) {
+        button.classList.add("active");
+        setTimeout(() => button.classList.remove("active"), 150); // Remove hover effect after 150ms
+    }
+};
+
 
 let gameOver = false;
 let foodX, foodY;
@@ -28,26 +38,30 @@ const handleGameOver = () => {
     location.reload();
 }
 
-const changeDirection = e => {
-    // Changing velocity value based on key press
-    if(e.key === "ArrowUp" && velocityY != 1) {
+const changeDirection = (e) => {
+    highlightButton(e.key); // Highlight corresponding button
+    if (e.key === "ArrowUp" && velocityY != 1) {
         velocityX = 0;
         velocityY = -1;
-    } else if(e.key === "ArrowDown" && velocityY != -1) {
+    } else if (e.key === "ArrowDown" && velocityY != -1) {
         velocityX = 0;
         velocityY = 1;
-    } else if(e.key === "ArrowLeft" && velocityX != 1) {
+    } else if (e.key === "ArrowLeft" && velocityX != 1) {
         velocityX = -1;
         velocityY = 0;
-    } else if(e.key === "ArrowRight" && velocityX != -1) {
+    } else if (e.key === "ArrowRight" && velocityX != -1) {
         velocityX = 1;
         velocityY = 0;
     }
-}
+};
 
-// Calling changeDirection on each key click and passing key dataset value as an object
-controls.forEach(button => button.addEventListener("click", () => changeDirection({ key: button.dataset.key })));
+// Add event listener for key presses
+document.addEventListener("keyup", changeDirection);
 
+// Add click event listeners for on-screen buttons
+controls.forEach(button =>
+    button.addEventListener("click", () => changeDirection({ key: button.dataset.key }))
+);
 const initGame = () => {
     if(gameOver) return handleGameOver();
     let html = `<div class="food" style="grid-area: ${foodY} / ${foodX}"></div>`;
